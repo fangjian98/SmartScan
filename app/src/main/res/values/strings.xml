@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SmartScan</string>
+
+    <string name="title">Scan</string>
+    <string name="scan_tip">Place the code within the frame</string>
+    <string name="scan_showresult">Scan results will show on screen</string>
+</resources>
