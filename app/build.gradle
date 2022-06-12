@@ -21,6 +21,12 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    aaptOptions {
+        if (rootProject.useFreemePlatformRes) {
+            additionalParameters '-I', rootProject.sdkFreemePlatformRes
+        }
+    }
 }
 
 dependencies {
