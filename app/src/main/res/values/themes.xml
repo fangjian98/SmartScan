@@ -21,7 +21,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <!--settings theme using freeme thmem-->
-    <style name="SettingsTheme" parent="@*freeme:style/Theme.Freeme.DayNight" />
-
 </resources>

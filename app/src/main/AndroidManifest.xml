@@ -38,8 +38,7 @@
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
-            android:label="@string/settings_title"
-            android:theme="@style/SettingsTheme" />
+            android:label="@string/settings_title" />
 
     </application>
 
