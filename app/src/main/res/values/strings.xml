@@ -5,10 +5,25 @@
     <string name="scan_tip">Place the code within the frame</string>
     <string name="scan_showresult">Scan results will show on screen</string>
 
+    <!-- scan functions title-->
     <string name="fun_document">Document</string>
     <string name="fun_translate">Translate</string>
     <string name="fun_scan">ScanCode</string>
     <string name="fun_recognition">Recognition</string>
     <string name="fun_card">Card</string>
+
+    <!--Settings preferences title-->
+    <string name="settings_title">Settings</string>
+
+    <string name="settings_border">Document recognition auto adjust border</string>
+    <string name="settings_qrcode">Generate QR code</string>
+    <string name="settings_card">My Card</string>
+    <string name="settings_document">My Document</string>
+
+    <string name="settings_privacy_policy">Privacy Policy (Concise Version)</string>
+    <string name="settings_personal_information">Personal Information Collection Checklist</string>
+    <string name="settings_partners_shared">Instructions for Third-Party Partners and Shared Information</string>
+    <string name="settings_permission">Permission application and usage description</string>
+    <string name="settings_about">About</string>
 
 </resources>

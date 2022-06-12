@@ -6,10 +6,25 @@
     <string name="scan_tip">Place the code within the frame</string>
     <string name="scan_showresult">Scan results will show on screen</string>
 
+    <!-- scan functions title-->
     <string name="fun_document">文档</string>
     <string name="fun_translate">翻译</string>
     <string name="fun_scan">扫码</string>
     <string name="fun_recognition">识物</string>
     <string name="fun_card">卡包</string>
+
+    <!--Settings preferences title-->
+    <string name="settings_title">设置</string>
+
+    <string name="settings_border">文档识别自动调整边框</string>
+    <string name="settings_qrcode">生成二维码</string>
+    <string name="settings_card">我的卡包</string>
+    <string name="settings_document">我的文档</string>
+
+    <string name="settings_privacy_policy">隐私政策(简明版)</string>
+    <string name="settings_personal_information">个人信息收集清单</string>
+    <string name="settings_partners_shared">第三方合作伙伴及共享信息说明</string>
+    <string name="settings_permission">权限申请与使用情况说明</string>
+    <string name="settings_about">关于</string>
 
 </resources>

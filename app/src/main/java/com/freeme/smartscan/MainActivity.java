@@ -142,7 +142,7 @@ public class MainActivity extends Activity {
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.finish();
+                startActivity(new Intent(MainActivity.this,SettingsActivity.class));
             }
         });
     }
