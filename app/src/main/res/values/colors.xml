@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="viewfinder_text_color4">#C0C0C0</color>
+
+    <color name="textColorWhite">#FFFFFF</color>
 </resources>

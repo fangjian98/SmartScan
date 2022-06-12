@@ -18,13 +18,13 @@
 
         <ImageView
             android:id="@+id/flush_btn"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:visibility="gone"
             android:gravity="center"
-            android:src="@drawable/flashlight_off" />
+            android:src="@drawable/ic_flashlight_off" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -56,22 +56,22 @@
             android:layout_width="240dp"
             android:layout_height="240dp"
             android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/cloors" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:background="#000000"
         android:gravity="center_vertical">
 
 
         <TextView
-            android:layout_marginStart="10sp"
-            android:layout_toEndOf="@+id/back_img"
+            android:layout_toEndOf="@+id/settings_img"
+            android:layout_toStartOf="@+id/img_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:text="@string/title"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
@@ -79,26 +79,107 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/back_img"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:padding="12dp"
+            android:id="@+id/img_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
             android:gravity="center"
-            android:src="@drawable/back" />
+            android:padding="12dp"
+            android:src="@drawable/ic_photo" />
 
         <ImageView
-            android:id="@+id/img_btn"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:padding="12dp"
+            android:id="@+id/settings_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="12dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
             android:gravity="center"
-            android:src="@drawable/photo" />
+            android:padding="12dp"
+            android:src="@drawable/ic_settings" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#000000"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/fun_title_size"
+                    android:textColor="@color/textColorWhite"
+                    android:text="@string/fun_document"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/fun_title_size"
+                    android:textColor="@color/textColorWhite"
+                    android:text="@string/fun_translate"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/fun_title_size"
+                    android:textColor="@color/textColorWhite"
+                    android:text="@string/fun_scan"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/fun_title_size"
+                    android:textColor="@color/textColorWhite"
+                    android:text="@string/fun_recognition"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/fun_title_size"
+                    android:textColor="@color/textColorWhite"
+                    android:text="@string/fun_card"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:src="@drawable/ic_shot" />
+
+        </RelativeLayout>
+
     </RelativeLayout>
 
 </FrameLayout>

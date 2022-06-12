@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">智能扫</string>
+
+    <string name="title">Scan</string>
+    <string name="scan_tip">Place the code within the frame</string>
+    <string name="scan_showresult">Scan results will show on screen</string>
+
+    <string name="fun_document">文档</string>
+    <string name="fun_translate">翻译</string>
+    <string name="fun_scan">扫码</string>
+    <string name="fun_recognition">识物</string>
+    <string name="fun_card">卡包</string>
+
+</resources>

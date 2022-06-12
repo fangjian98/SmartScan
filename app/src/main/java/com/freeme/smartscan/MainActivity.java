@@ -1,53 +1,33 @@
 package com.freeme.smartscan;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.Log;
-import android.util.SparseArray;
-import android.view.Display;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.freeme.smartscan.view.ScanResultView;
-import com.huawei.hmf.tasks.OnFailureListener;
-import com.huawei.hmf.tasks.OnSuccessListener;
 import com.huawei.hms.hmsscankit.OnLightVisibleCallBack;
 import com.huawei.hms.hmsscankit.OnResultCallback;
 import com.huawei.hms.hmsscankit.RemoteView;
 import com.huawei.hms.hmsscankit.ScanUtil;
 import com.huawei.hms.ml.scan.HmsScan;
-import com.huawei.hms.ml.scan.HmsScanAnalyzer;
 import com.huawei.hms.ml.scan.HmsScanAnalyzerOptions;
-import com.huawei.hms.mlsdk.common.MLFrame;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Objects;
 
 public class MainActivity extends Activity {
     private FrameLayout frameLayout;
     private RemoteView remoteView;
-    private ImageView backBtn;
+    private ImageView settingsBtn;
     private ImageView imgBtn;
     private ImageView flushBtn;
     int mScreenWidth;
@@ -55,7 +35,7 @@ public class MainActivity extends Activity {
     //The width and height of scan_view_finder is both 240 dp.
     final int SCAN_FRAME_SIZE = 240;
 
-    private int[] img = {R.drawable.flashlight_on, R.drawable.flashlight_off};
+    private int[] img = {R.drawable.ic_flashlight_on, R.drawable.ic_flashlight_off};
     private static final String TAG = "DefinedActivity";
 
     //Declare the key. It is used to obtain the value returned from Scan Kit.
@@ -105,12 +85,13 @@ public class MainActivity extends Activity {
             public void onResult(HmsScan[] result) {
                 //Check the result.
                 if (result != null && result.length > 0 && result[0] != null && !TextUtils.isEmpty(result[0].getOriginalValue())) {
-                    /*Intent intent = new Intent();
-                    intent.putExtra(SCAN_RESULT, result[0]);
-                    setResult(RESULT_OK, intent);*/
+                    //Intent intent = new Intent();
+                    //intent.putExtra(SCAN_RESULT, result[0]);
+                    //setResult(RESULT_OK, intent);
+                    //MainActivity.this.finish();
                     HmsScan hmsScan = result[0];
                     Toast.makeText(MainActivity.this,"hmsScan="+hmsScan.getOriginalValue()+" ScanType="+hmsScan.getScanType(),Toast.LENGTH_SHORT).show();
-                    //MainActivity.this.finish();
+
                 }
             }
         });
@@ -118,8 +99,8 @@ public class MainActivity extends Activity {
         remoteView.onCreate(savedInstanceState);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
         frameLayout.addView(remoteView, params);
-        // Set the back, photo scanning, and flashlight operations.
-        setBackOperation();
+        // Set the settings, photo scanning, and flashlight operations.
+        setSettingsOperation();
         setPictureScanOperation();
         setFlashOperation();
     }
@@ -156,9 +137,9 @@ public class MainActivity extends Activity {
         });
     }
 
-    private void setBackOperation() {
-        backBtn = findViewById(R.id.back_img);
-        backBtn.setOnClickListener(new View.OnClickListener() {
+    private void setSettingsOperation() {
+        settingsBtn = findViewById(R.id.settings_img);
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity.this.finish();
@@ -210,10 +191,12 @@ public class MainActivity extends Activity {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data.getData());
                 HmsScan[] hmsScans = ScanUtil.decodeWithBitmap(MainActivity.this, bitmap, new HmsScanAnalyzerOptions.Creator().setPhotoMode(true).create());
                 if (hmsScans != null && hmsScans.length > 0 && hmsScans[0] != null && !TextUtils.isEmpty(hmsScans[0].getOriginalValue())) {
-                    Intent intent = new Intent();
-                    intent.putExtra(SCAN_RESULT, hmsScans[0]);
-                    setResult(RESULT_OK, intent);
-                    MainActivity.this.finish();
+                    //Intent intent = new Intent();
+                    //intent.putExtra(SCAN_RESULT, hmsScans[0]);
+                    //setResult(RESULT_OK, intent);
+                    //MainActivity.this.finish();
+                    HmsScan hmsScan = hmsScans[0];
+                    Toast.makeText(MainActivity.this,"hmsScan="+hmsScan.getOriginalValue()+" ScanType="+hmsScan.getScanType(),Toast.LENGTH_SHORT).show();
                 }
             } catch (IOException e) {
                 e.printStackTrace();

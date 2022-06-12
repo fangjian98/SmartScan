@@ -4,4 +4,11 @@
     <string name="title">Scan</string>
     <string name="scan_tip">Place the code within the frame</string>
     <string name="scan_showresult">Scan results will show on screen</string>
+
+    <string name="fun_document">Document</string>
+    <string name="fun_translate">Translate</string>
+    <string name="fun_scan">ScanCode</string>
+    <string name="fun_recognition">Recognition</string>
+    <string name="fun_card">Card</string>
+
 </resources>
