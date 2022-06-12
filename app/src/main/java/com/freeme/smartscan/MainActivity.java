@@ -13,8 +13,13 @@ import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.huawei.hms.hmsscankit.OnLightVisibleCallBack;
 import com.huawei.hms.hmsscankit.OnResultCallback;
 import com.huawei.hms.hmsscankit.RemoteView;
@@ -41,11 +46,29 @@ public class MainActivity extends Activity {
     //Declare the key. It is used to obtain the value returned from Scan Kit.
     public static final String SCAN_RESULT = "scanResult";
     public static final int REQUEST_CODE_PHOTO = 0X1113;
+
+    private ConstraintLayout constraintlayout;
+    private ImageView iv_slide;
+    private TextView tv_result_titile;
+    private TextView tv_result;
+    private RecyclerView recycleview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.result_display_view);
+
+        //bottomSheetBehavior
+        constraintlayout = findViewById(R.id.constraintlayout);
+        tv_result_titile = findViewById(R.id.tv_result_titile);
+        tv_result = findViewById(R.id.tv_result);
+        recycleview = findViewById(R.id.recycleview);
+        iv_slide = findViewById(R.id.iv_slide);
+
+        BottomSheetBehavior<ConstraintLayout> bottomSheetBehavior = BottomSheetBehavior.from(constraintlayout);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
         // Bind the camera preview screen.
         frameLayout = findViewById(R.id.rim);
 
@@ -90,8 +113,9 @@ public class MainActivity extends Activity {
                     //setResult(RESULT_OK, intent);
                     //MainActivity.this.finish();
                     HmsScan hmsScan = result[0];
-                    Toast.makeText(MainActivity.this,"hmsScan="+hmsScan.getOriginalValue()+" ScanType="+hmsScan.getScanType(),Toast.LENGTH_SHORT).show();
-
+                    constraintlayout.setVisibility(View.VISIBLE);
+                    tv_result.setText(hmsScan.getOriginalValue());
+                    //Toast.makeText(MainActivity.this,"hmsScan="+hmsScan.getOriginalValue()+" ScanType="+hmsScan.getScanType(),Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -196,7 +220,9 @@ public class MainActivity extends Activity {
                     //setResult(RESULT_OK, intent);
                     //MainActivity.this.finish();
                     HmsScan hmsScan = hmsScans[0];
-                    Toast.makeText(MainActivity.this,"hmsScan="+hmsScan.getOriginalValue()+" ScanType="+hmsScan.getScanType(),Toast.LENGTH_SHORT).show();
+                    constraintlayout.setVisibility(View.VISIBLE);
+                    tv_result.setText(hmsScan.getOriginalValue());
+                    //Toast.makeText(MainActivity.this,"hmsScan="+hmsScan.getOriginalValue()+" ScanType="+hmsScan.getScanType(),Toast.LENGTH_SHORT).show();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
