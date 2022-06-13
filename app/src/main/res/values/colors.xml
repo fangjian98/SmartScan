@@ -11,4 +11,10 @@
     <color name="viewfinder_text_color4">#C0C0C0</color>
 
     <color name="textColorWhite">#FFFFFF</color>
+    <color name="textColorGray">#A2ACB9</color>
+
+    <color name="generate_code_text_bg">#F5F6F8</color>
+
+    <color name="app_theme_color_accent">@*freeme:color/accent_freeme_light</color>
+    <color name="button_freeme_color">@*freeme:color/button_freeme_light</color>
 </resources>

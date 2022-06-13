@@ -53,7 +53,7 @@ public class SettingsActivity extends Activity {
                 case SETTINGS_BORDER_KEY:
                     break;
                 case SETTINGS_QRCODE_KEY:
-                    //startActivity(new Intent(mActivity, MainActivity.class));
+                    startActivity(new Intent(mActivity, GenerateCodeActivity.class));
                     break;
                 case SETTINGS_CARD:
                     break;

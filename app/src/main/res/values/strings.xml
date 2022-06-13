@@ -26,4 +26,11 @@
     <string name="settings_permission">Permission application and usage description</string>
     <string name="settings_about">About</string>
 
+    <!--Generate QR code-->
+    <string name="generate_qr_code_title">Generate QR code</string>
+    <string name="generate_qr_code_hint">Enter text content</string>
+
+    <string name="action_cancel">Cancel</string>
+    <string name="action_share">Share</string>
+
 </resources>
