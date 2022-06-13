@@ -14,7 +14,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,26 +47,28 @@ public class MainActivity extends Activity {
     public static final int REQUEST_CODE_PHOTO = 0X1113;
 
     private ConstraintLayout constraintlayout;
-    private ImageView iv_slide;
+    private ImageView btnCancel;
     private TextView tv_result_titile;
     private TextView tv_result;
     private RecyclerView recycleview;
+
+    private BottomSheetBehavior bottomSheetBehavior;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.result_display_view);
+        setContentView(R.layout.activity_main);
 
         //bottomSheetBehavior
         constraintlayout = findViewById(R.id.constraintlayout);
         tv_result_titile = findViewById(R.id.tv_result_titile);
         tv_result = findViewById(R.id.tv_result);
         recycleview = findViewById(R.id.recycleview);
-        iv_slide = findViewById(R.id.iv_slide);
+        setCancelOperation();
 
-        BottomSheetBehavior<ConstraintLayout> bottomSheetBehavior = BottomSheetBehavior.from(constraintlayout);
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+        bottomSheetBehavior = BottomSheetBehavior.from(constraintlayout);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
 
         // Bind the camera preview screen.
         frameLayout = findViewById(R.id.rim);
@@ -113,7 +114,7 @@ public class MainActivity extends Activity {
                     //setResult(RESULT_OK, intent);
                     //MainActivity.this.finish();
                     HmsScan hmsScan = result[0];
-                    constraintlayout.setVisibility(View.VISIBLE);
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
                     tv_result.setText(hmsScan.getOriginalValue());
                     //Toast.makeText(MainActivity.this,"hmsScan="+hmsScan.getOriginalValue()+" ScanType="+hmsScan.getScanType(),Toast.LENGTH_SHORT).show();
                 }
@@ -171,6 +172,16 @@ public class MainActivity extends Activity {
         });
     }
 
+    private void setCancelOperation(){
+        btnCancel = findViewById(R.id.iv_cancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+            }
+        });
+    }
+
     /**
      * Call the lifecycle management method of the remoteView activity.
      */
@@ -220,7 +231,7 @@ public class MainActivity extends Activity {
                     //setResult(RESULT_OK, intent);
                     //MainActivity.this.finish();
                     HmsScan hmsScan = hmsScans[0];
-                    constraintlayout.setVisibility(View.VISIBLE);
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
                     tv_result.setText(hmsScan.getOriginalValue());
                     //Toast.makeText(MainActivity.this,"hmsScan="+hmsScan.getOriginalValue()+" ScanType="+hmsScan.getScanType(),Toast.LENGTH_SHORT).show();
                 }

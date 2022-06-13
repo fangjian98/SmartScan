@@ -3,16 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/back.xml" value="0.211" />
         <entry key="app/src/main/res/drawable/cloors.xml" value="0.193" />
+        <entry key="app/src/main/res/drawable/cust_result_bg.xml" value="0.1335" />
+        <entry key="app/src/main/res/drawable/ic_cancel.xml" value="0.2105" />
         <entry key="app/src/main/res/drawable/ic_flashlight_off.xml" value="0.211" />
         <entry key="app/src/main/res/drawable/ic_flashlight_on.xml" value="0.211" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1635" />
+        <entry key="app/src/main/res/drawable/ic_next.xml" value="0.178" />
         <entry key="app/src/main/res/drawable/ic_photo.xml" value="0.178" />
         <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.178" />
         <entry key="app/src/main/res/drawable/ic_shot.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/icon_swipe_up.xml" value="0.1325" />
         <entry key="app/src/main/res/drawable/photo.xml" value="0.211" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3697916666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_new_main.xml" value="0.19947916666666668" />
+        <entry key="app/src/main/res/layout/content_bottom_sheet.xml" value="0.19947916666666668" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.19947916666666668" />
+        <entry key="app/src/main/res/layout/icon_next.xml" value="0.16822916666666668" />
+        <entry key="app/src/main/res/layout/result_display_view.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/layout/sample_my_view.xml" value="0.20052083333333334" />
+        <entry key="app/src/main/res/layout/settings_activity.xml" value="0.18489583333333334" />
+        <entry key="app/src/main/res/xml/root_preferences.xml" value="0.1693840579710145" />
       </map>
     </option>
   </component>
