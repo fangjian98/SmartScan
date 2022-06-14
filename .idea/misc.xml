@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/drawable/icon_swipe_up.xml" value="0.1325" />
         <entry key="app/src/main/res/drawable/photo.xml" value="0.211" />
         <entry key="app/src/main/res/layout/activity_about.xml" value="0.20052083333333334" />
+        <entry key="app/src/main/res/layout/activity_document.xml" value="0.18489583333333334" />
         <entry key="app/src/main/res/layout/activity_generate_code.xml" value="0.12291666666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.20052083333333334" />
@@ -31,6 +32,7 @@
         <entry key="app/src/main/res/layout/icon_next.xml" value="0.16822916666666668" />
         <entry key="app/src/main/res/layout/result_display_view.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/sample_my_view.xml" value="0.20052083333333334" />
+        <entry key="app/src/main/res/layout/scan_document_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/settings_activity.xml" value="0.18489583333333334" />
         <entry key="app/src/main/res/xml/about_preferences.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/xml/root_preferences.xml" value="0.1693840579710145" />

@@ -23,7 +23,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartScan"
         tools:targetApi="31">
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -43,12 +42,16 @@
             android:exported="false"
             android:label="@string/generate_qr_code_title"
             android:theme="@style/Theme.Freeme" />
-
         <activity
             android:name=".AboutActivity"
             android:exported="false"
             android:label="@string/settings_about"
             android:theme="@style/Theme.Freeme" />
+        <activity
+            android:name=".DocumentActivity"
+            android:exported="false"
+            android:label="@string/settings_document"
+            android:theme="@style/Theme.Freeme"/>
     </application>
 
 </manifest>
