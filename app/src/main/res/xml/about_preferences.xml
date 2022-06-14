@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings_about">
+
+    <Preference
+        android:key="about_updates_key"
+        android:title="@string/about_updates_title"
+        android:widgetLayout="@layout/icon_next" />
+
+    <Preference
+        android:key="about_policy_key"
+        android:title="@string/about_policy_title"
+        android:widgetLayout="@layout/icon_next" />
+
+    <Preference
+        android:key="about_user_agreement_key"
+        android:title="@string/about_user_agreement_title"
+        android:widgetLayout="@layout/icon_next" />
+
+</PreferenceScreen>

@@ -9,8 +9,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- write permission for save QRCODE Bitmap,not for scankit itself -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/><!-- add for share QR code image,if without,will share fail -->
-
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> <!-- add for share QR code image,if without,will share fail -->
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -34,19 +33,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:label="@string/settings_title"
             android:theme="@style/Theme.Freeme" />
-
         <activity
             android:name=".GenerateCodeActivity"
             android:exported="false"
             android:label="@string/generate_qr_code_title"
-            android:theme="@style/Theme.Freeme"/>
+            android:theme="@style/Theme.Freeme" />
 
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:label="@string/settings_about"
+            android:theme="@style/Theme.Freeme" />
     </application>
 
 </manifest>

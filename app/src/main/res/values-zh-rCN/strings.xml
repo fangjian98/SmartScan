@@ -31,6 +31,11 @@
     <string name="generate_qr_code_title">生成二维码</string>
     <string name="generate_qr_code_hint">输入文本内容</string>
 
+    <!--Settings about preferences title-->
+    <string name="about_updates_title">检查更新</string>
+    <string name="about_policy_title">隐私政策</string>
+    <string name="about_user_agreement_title">用户协议</string>
+
     <string name="action_cancel">取消</string>
     <string name="action_share">分享</string>
 

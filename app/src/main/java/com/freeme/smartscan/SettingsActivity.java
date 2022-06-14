@@ -70,7 +70,7 @@ public class SettingsActivity extends Activity {
                 case SETTINGS_PERMISSION_KEY:
                     break;
                 case SETTINGS_ABOUT_KEY:
-                    //startActivity(new Intent(mActivity, AboutActivity.class));
+                    startActivity(new Intent(mActivity, AboutActivity.class));
                     break;
             }
             return super.onPreferenceTreeClick(preferenceScreen, preference);
