@@ -27,10 +27,10 @@ public class SettingsActivity extends Activity {
 
         private static final String SETTINGS_BORDER_KEY = "settings_border_key";
         private static final String SETTINGS_QRCODE_KEY = "settings_qrcode_key";
-        private static final String SETTINGS_CARD = "settings_card";
-        private static final String SETTINGS_DOCUMENT = "settings_document";
+        private static final String SETTINGS_CARD_KEY = "settings_card_key";
+        private static final String SETTINGS_DOCUMENT_KEY = "settings_document_key";
 
-        private static final String SETTINGS_PRIVACY_POLICY = "settings_privacy_policy";
+        private static final String SETTINGS_PRIVACY_POLICY_KEY = "settings_privacy_policy_key";
         private static final String SETTINGS_PERSONAL_INFORMATION_KEY = "settings_personal_information_key";
         private static final String SETTINGS_PARTNERS_SHARED_KEY = "settings_partners_shared_key";
         private static final String SETTINGS_PERMISSION_KEY = "settings_permission_key";
@@ -55,11 +55,13 @@ public class SettingsActivity extends Activity {
                 case SETTINGS_QRCODE_KEY:
                     startActivity(new Intent(mActivity, GenerateCodeActivity.class));
                     break;
-                case SETTINGS_CARD:
+                case SETTINGS_CARD_KEY:
+                    //startActivity(new Intent(mActivity, CardActivity.class));
                     break;
-                case SETTINGS_DOCUMENT:
+                case SETTINGS_DOCUMENT_KEY:
+                    //startActivity(new Intent(mActivity, DocumentActivity.class));
                     break;
-                case SETTINGS_PRIVACY_POLICY:
+                case SETTINGS_PRIVACY_POLICY_KEY:
                     break;
                 case SETTINGS_PERSONAL_INFORMATION_KEY:
                     break;
@@ -68,6 +70,7 @@ public class SettingsActivity extends Activity {
                 case SETTINGS_PERMISSION_KEY:
                     break;
                 case SETTINGS_ABOUT_KEY:
+                    //startActivity(new Intent(mActivity, AboutActivity.class));
                     break;
             }
             return super.onPreferenceTreeClick(preferenceScreen, preference);
