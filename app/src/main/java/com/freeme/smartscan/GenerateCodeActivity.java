@@ -1,6 +1,7 @@
 package com.freeme.smartscan;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -26,6 +27,8 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.freeme.smartscan.utils.FileUtil;
+import com.freeme.smartscan.utils.MimeUtil;
 import com.huawei.hms.hmsscankit.ScanUtil;
 import com.huawei.hms.hmsscankit.WriterException;
 import com.huawei.hms.ml.scan.HmsBuildBitmapOption;
@@ -118,13 +121,22 @@ public class GenerateCodeActivity extends Activity {
             GenerateCodeActivity.this.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
             if (isSuccess) {
 
-                //Share QR code
-                Intent intent = new Intent(Intent.ACTION_SEND);
+                //Share QR code using MediaStore API
+                /*Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("image/jpeg");
                 ContentValues values = new ContentValues();
                 values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
                 values.put(MediaStore.Images.Media.DATA, file.getAbsolutePath());
                 Uri shareUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+                intent.putExtra(Intent.EXTRA_STREAM, shareUri);
+                startActivity(Intent.createChooser(intent,getString(R.string.action_share)));*/
+
+                //Share QR code using FileProvider
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                Uri shareUri = FileProvider.getUriForFile(this, "com.freeme.smartscan.provider",file);
+                grantUriPermission(getPackageName(), shareUri,Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                intent.setType("image/jpeg");
                 intent.putExtra(Intent.EXTRA_STREAM, shareUri);
                 startActivity(Intent.createChooser(intent,getString(R.string.action_share)));
 
