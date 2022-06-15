@@ -25,4 +25,15 @@
     <!--settings theme using freeme thmem-->
     <style name="Theme.Freeme" parent="@*freeme:style/Theme.Freeme.DayNight" />
 
+    <!--multi select header text theme-->
+    <style name="AppTheme.Title" parent="@*freeme:style/TextAppearance.Freeme.Widget.ActionMode.Title"/>
+    <style name="AppTheme" parent="@*freeme:style/Theme.Freeme.Main" />
+    <style name="AppTheme.Text">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">?android:attr/colorAccent</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:textAppearance">?android:attr/actionMenuTextAppearance</item>
+        <item name="android:clickable">true</item>
+    </style>
+
 </resources>

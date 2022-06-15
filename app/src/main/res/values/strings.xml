@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">SmartScan</string>
 
     <string name="title">Scan</string>
@@ -35,7 +35,15 @@
     <string name="about_policy_title">Privacy Policy</string>
     <string name="about_user_agreement_title">User Agreement</string>
 
+    <!--multi select header-->
+    <string name="select_all">Select All</string>
+    <string name="deselect_all">Deselect all</string>
+    <string name="single_select_title"><xliff:g id="count">%1$d</xliff:g> item selected</string>
+    <string name="multi_select_titles"><xliff:g id="count">%1$d</xliff:g> items selected</string>
+
     <string name="action_cancel">Cancel</string>
     <string name="action_share">Share</string>
+    <string name="action_rename">Rename</string>
+    <string name="action_delete">Delete</string>
 
 </resources>
