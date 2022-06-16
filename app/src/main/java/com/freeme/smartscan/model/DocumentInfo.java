@@ -1,6 +1,6 @@
 package com.freeme.smartscan.model;
 
-public class DocumentInfo {
+public class DocumentInfo extends Info{
 
     private String docName;
     private String docDate;

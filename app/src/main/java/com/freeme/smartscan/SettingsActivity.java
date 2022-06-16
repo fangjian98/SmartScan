@@ -56,7 +56,7 @@ public class SettingsActivity extends Activity {
                     startActivity(new Intent(mActivity, GenerateCodeActivity.class));
                     break;
                 case SETTINGS_CARD_KEY:
-                    //startActivity(new Intent(mActivity, CardActivity.class));
+                    startActivity(new Intent(mActivity, CardActivity.class));
                     break;
                 case SETTINGS_DOCUMENT_KEY:
                     startActivity(new Intent(mActivity, DocumentActivity.class));

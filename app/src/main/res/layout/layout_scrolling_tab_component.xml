@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.freeme.smartscan.view.FreemeTabLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:duplicateParentState="true"
+    android_custom:tab_indicatorColor="@color/app_theme_color_accent"
+    android_custom:tab_minWidth="65dp"
+    android_custom:tab_paddingEnd="25dp"
+    android_custom:tab_paddingStart="8dp"
+    android_custom:tab_selectedTextColor="@color/app_theme_color_accent" />
+
+    <!--android_custom:tab_textColor="#000000"
+    android_custom:tab_textSize="15sp"-->

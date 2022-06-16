@@ -17,15 +17,11 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SmartScan"
-        tools:targetApi="31">
+        android:theme="@style/Theme.SmartScan" >
 
         <activity
             android:name=".MainActivity"
@@ -56,10 +52,16 @@
             android:theme="@style/Theme.Freeme" />
 
         <activity
+            android:name=".CardActivity"
+            android:exported="false"
+            android:label="@string/settings_card"
+            android:theme="@style/Theme.Freeme" />
+
+        <activity
             android:name=".DocumentActivity"
             android:exported="false"
             android:label="@string/settings_document"
-            android:theme="@style/Theme.Freeme"/>
+            android:theme="@style/Theme.Freeme" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

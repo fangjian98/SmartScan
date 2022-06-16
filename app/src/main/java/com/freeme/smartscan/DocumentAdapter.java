@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.freeme.smartscan.model.CardInfo;
 import com.freeme.smartscan.model.DocumentInfo;
 import com.freeme.smartscan.utils.Constants;
 
