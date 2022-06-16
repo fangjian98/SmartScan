@@ -12,6 +12,7 @@
         android:layout_weight="1"
         android:background="@drawable/genetate_code_text_bg"
         android:gravity="start"
+        android:textColor="@color/textColorPrimary"
         android:hint="@string/generate_qr_code_hint"
         android:textSize="16sp" />
 
