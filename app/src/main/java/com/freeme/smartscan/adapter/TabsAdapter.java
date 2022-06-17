@@ -1,10 +1,9 @@
-package com.freeme.smartscan;
+package com.freeme.smartscan.adapter;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.ActionMode;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -22,7 +21,7 @@ public class TabsAdapter extends FragmentPagerAdapter implements ActionBar.TabLi
 
     static final class TabInfo {
         private final Class<?> clss;
-        private final Bundle args;
+        private Bundle args;
         private Fragment fragment;
 
         TabInfo(Class<?> _class, Bundle _args) {

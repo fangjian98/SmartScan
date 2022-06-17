@@ -1,4 +1,4 @@
-package com.freeme.smartscan;
+package com.freeme.smartscan.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.freeme.smartscan.model.CardInfo;
+import com.freeme.smartscan.R;
 import com.freeme.smartscan.model.DocumentInfo;
 import com.freeme.smartscan.utils.Constants;
 

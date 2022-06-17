@@ -1,9 +1,5 @@
 package com.freeme.smartscan;
 
-import androidx.core.content.FileProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
@@ -24,6 +20,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.freeme.smartscan.adapter.DocumentAdapter;
 import com.freeme.smartscan.model.DocumentInfo;
 import com.freeme.smartscan.utils.Constants;
 import com.freeme.smartscan.utils.FileIconHelper;
@@ -35,7 +36,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class DocumentActivity extends Activity implements ActionMode.Callback,DocumentAdapter.CustomItemClickListener{
+public class DocumentActivity extends Activity implements ActionMode.Callback, DocumentAdapter.CustomItemClickListener{
 
     private static String SCAN_DOCUMENT_DIR = "/storage/emulated/0/Documents/SmartScan/";
     private int mShowType = Constants.TYPE_SHOW_NORMAL;
@@ -214,8 +215,8 @@ public class DocumentActivity extends Activity implements ActionMode.Callback,Do
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            // = ProgressDialog.show(mContext, "提示", "奋力寻找中……");
-            //mDialog.show();
+            // mDialog = ProgressDialog.show(mContext, "提示", "奋力寻找中……");
+            // mDialog.show();
         }
 
         @Override
@@ -228,7 +229,7 @@ public class DocumentActivity extends Activity implements ActionMode.Callback,Do
         @Override
         protected void onPostExecute(Integer integer) {
             super.onPostExecute(integer);
-            //mDialog.cancel();
+            // mDialog.cancel();
 
             mDocumentAdapter = new DocumentAdapter(mContext, mDocInfos);
             mDocumentAdapter.setCustomItemClickListener((DocumentAdapter.CustomItemClickListener) mContext);
