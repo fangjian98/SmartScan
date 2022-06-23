@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">智能扫</string>
+    <string name="app_name">智能扫一扫</string>
 
     <string name="title">Scan</string>
     <string name="scan_tip">Place the code within the frame</string>
@@ -50,5 +50,7 @@
     <string name="action_share">分享</string>
     <string name="action_rename">重命名</string>
     <string name="action_delete">删除</string>
+
+    <string name="empty_view_tip">没有内容</string>
 
 </resources>

@@ -13,12 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.freeme.smartscan.R;
 import com.freeme.smartscan.adapter.CardAdapter;
 import com.freeme.smartscan.model.CardInfo;
+import com.freeme.widget.FreemeEmptyView;
 
 import java.util.ArrayList;
 
 public class CardFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
+    private FreemeEmptyView mEmptyView;
     private CardAdapter mCardAdapter;
     private Context mContext;
     private ArrayList<CardInfo> mCardInfos = new ArrayList<>();
@@ -51,9 +53,18 @@ public class CardFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_card, container, false);
 
         mRecyclerView = view.findViewById(R.id.recycle_view);
+        mEmptyView = view.findViewById(R.id.empty_view);
+
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         mCardAdapter = new CardAdapter(getActivity(), mCardInfos);
         mRecyclerView.setAdapter(mCardAdapter);
+
+        showEmptyView(mCardInfos.size() <= 0);
+
         return view;
+    }
+
+    private void showEmptyView(boolean isShow) {
+        mEmptyView.setVisibility(isShow ? View.VISIBLE : View.GONE);
     }
 }

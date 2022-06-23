@@ -39,7 +39,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         if (cardInfo != null) {
             Glide.with(mContext)
                     .load(new File(cardInfo.getCardPath()))
-                    .placeholder(R.drawable.ic_launcher_foreground)
+                    .placeholder(R.drawable.ic_launcher_foreground)//Glide使用placeholder占位图，最后加载出来的图片尺寸变成了占位图尺寸
                     .thumbnail(0.2f)
                     .into(holder.card);
         }

@@ -31,6 +31,7 @@ import com.freeme.smartscan.utils.FileIconHelper;
 import com.freeme.smartscan.utils.FileUtil;
 import com.freeme.smartscan.utils.LogUtil;
 import com.freeme.smartscan.utils.MimeUtil;
+import com.freeme.widget.FreemeEmptyView;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -48,6 +49,7 @@ public class DocumentActivity extends Activity implements ActionMode.Callback, D
     private LinearLayout mActionModeHeader;
 
     private RecyclerView mRecyclerView;
+    private FreemeEmptyView mEmptyView;
     private DocumentAdapter mDocumentAdapter;
     private LoadDocumentFileTask documentFileTask;
 
@@ -57,6 +59,7 @@ public class DocumentActivity extends Activity implements ActionMode.Callback, D
         setContentView(R.layout.activity_document);
 
         mRecyclerView = findViewById(R.id.recycle_view);
+        mEmptyView = findViewById(R.id.empty_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //LoadDocumentFileTask
@@ -201,6 +204,10 @@ public class DocumentActivity extends Activity implements ActionMode.Callback, D
         }
     }
 
+    private void showEmptyView(boolean isShow) {
+        mEmptyView.setVisibility(isShow ? View.VISIBLE : View.GONE);
+    }
+
     ArrayList<DocumentInfo> mDocInfos = new ArrayList<DocumentInfo>();
 
     private class LoadDocumentFileTask extends AsyncTask<String, Integer, Integer> {
@@ -230,6 +237,8 @@ public class DocumentActivity extends Activity implements ActionMode.Callback, D
         protected void onPostExecute(Integer integer) {
             super.onPostExecute(integer);
             // mDialog.cancel();
+
+            showEmptyView(mDocInfos.size() <= 0);
 
             mDocumentAdapter = new DocumentAdapter(mContext, mDocInfos);
             mDocumentAdapter.setCustomItemClickListener((DocumentAdapter.CustomItemClickListener) mContext);
