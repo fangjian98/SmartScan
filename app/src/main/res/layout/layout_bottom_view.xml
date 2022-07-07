@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="#000000"
+        android:layout_alignParentBottom="true">
+
+        <!--<LinearLayout
+            android:id="@+id/menu_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:gravity="center"
+                android:textSize="@dimen/fun_title_size"
+                android:textColor="@color/textColorWhite"
+                android:text="@string/fun_document"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:gravity="center"
+                android:textSize="@dimen/fun_title_size"
+                android:textColor="@color/textColorWhite"
+                android:text="@string/fun_translate"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:gravity="center"
+                android:textSize="@dimen/fun_title_size"
+                android:textColor="@color/textColorWhite"
+                android:text="@string/fun_scan"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:gravity="center"
+                android:textSize="@dimen/fun_title_size"
+                android:textColor="@color/textColorWhite"
+                android:text="@string/fun_recognition"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:gravity="center"
+                android:textSize="@dimen/fun_title_size"
+                android:textColor="@color/textColorWhite"
+                android:text="@string/fun_card"/>
+
+        </LinearLayout>-->
+
+        <RadioGroup
+            android:id="@+id/fun_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/fun_document"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/fun_button_textcolor"
+                android:textSize="@dimen/fun_title_size"
+                android:text="@string/fun_document"
+                android:singleLine="true"
+                android:button="@null"
+                android:tag="fun_document"/>
+
+            <RadioButton
+                android:id="@+id/fun_translate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/fun_button_textcolor"
+                android:textSize="@dimen/fun_title_size"
+                android:text="@string/fun_translate"
+                android:singleLine="true"
+                android:button="@null"
+                android:tag="fun_translate"/>
+
+            <RadioButton
+                android:id="@+id/fun_scan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/fun_button_textcolor"
+                android:textSize="@dimen/fun_title_size"
+                android:text="@string/fun_scan"
+                android:singleLine="true"
+                android:button="@null"
+                android:checked="true"
+                android:tag="fun_scan"/>
+
+            <RadioButton
+                android:id="@+id/fun_recognition"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/fun_button_textcolor"
+                android:textSize="@dimen/fun_title_size"
+                android:text="@string/fun_recognition"
+                android:singleLine="true"
+                android:button="@null"
+                android:tag="fun_recognition"/>
+
+            <RadioButton
+                android:id="@+id/fun_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/fun_button_textcolor"
+                android:textSize="@dimen/fun_title_size"
+                android:text="@string/fun_card"
+                android:singleLine="true"
+                android:button="@null"
+                android:tag="fun_card"/>
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/btn_shot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/fun_menu"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_shot" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

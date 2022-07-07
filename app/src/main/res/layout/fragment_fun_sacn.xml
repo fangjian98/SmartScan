@@ -4,15 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <!-- Main Content -->
+    <include layout="@layout/content_main" />
 
-    <!-- Bottom View -->
-    <include layout="@layout/layout_bottom_view" />
+    <!-- Header View -->
+    <include layout="@layout/layout_head_view" />
 
     <!-- Bottom Sheet Content -->
     <include layout="@layout/content_bottom_sheet" />

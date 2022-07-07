@@ -22,4 +22,5 @@
 
     <color name="ic_menu_enable_color">@color/textColorPrimary</color>
     <color name="ic_menu_disable_color">@*freeme:color/menu_text_color_disable</color>
+    <color name="textColorYellow">#F8CA30</color>
 </resources>

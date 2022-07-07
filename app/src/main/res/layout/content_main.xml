@@ -13,8 +13,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:gravity="center_vertical">
+        android:layout_height="match_parent"
+        android:gravity="bottom">
 
         <ImageView
             android:id="@+id/flush_btn"
@@ -22,12 +22,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:visibility="gone"
+            android:layout_marginBottom="230dp"
+            android:visibility="visible"
             android:gravity="center"
             android:src="@drawable/ic_flashlight_off" />
     </RelativeLayout>
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -57,16 +58,15 @@
             android:layout_height="240dp"
             android:layout_centerInParent="true"
             android:background="@drawable/cloors" />
-    </RelativeLayout>
+    </RelativeLayout>-->
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="#000000"
         android:gravity="center_vertical">
 
-
-        <TextView
+       &lt;!&ndash; <TextView
             android:layout_toEndOf="@+id/settings_img"
             android:layout_toStartOf="@+id/img_btn"
             android:layout_width="match_parent"
@@ -76,7 +76,7 @@
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold" />&ndash;&gt;
 
         <ImageView
             android:id="@+id/img_btn"
@@ -89,6 +89,16 @@
             android:src="@drawable/ic_photo" />
 
         <ImageView
+            android:id="@+id/img_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:padding="12dp"
+            android:src="@drawable/ic_line" />
+
+        <ImageView
             android:id="@+id/settings_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,9 +107,9 @@
             android:gravity="center"
             android:padding="12dp"
             android:src="@drawable/ic_settings" />
-    </RelativeLayout>
+    </RelativeLayout>-->
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -178,6 +188,6 @@
 
         </RelativeLayout>
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 </FrameLayout>
