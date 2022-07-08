@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int REQUEST_CODE_PHOTO = 0X1113;
 
+    private String currentFragmentTag = Constants.FRAGMENT_SCAN_TAG;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,30 +62,52 @@ public class MainActivity extends AppCompatActivity {
         bottomSheetBehavior = BottomSheetBehavior.from(constraintlayout);
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
 
-        btnShot = findViewById(R.id.btn_shot);
+        setSwitchFunction();
+        setCancelOperation();
+        setShotOperation();
+
+        if(savedInstanceState == null){
+            replaceFragment(currentFragmentTag);
+        }
+    }
+
+    private void setSwitchFunction() {
         mFunMemu = findViewById(R.id.fun_menu);
         mFunMemu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton radioButton = (RadioButton) group.findViewById(checkedId);
-                String index = radioButton.getTag().toString();
-                android.util.Log.e("fangjian","index="+index);
-                replaceFragment(index);
+                currentFragmentTag = radioButton.getTag().toString();
+                replaceFragment(currentFragmentTag);
             }
         });
-
-        setCancelOperation();
-
-        if(savedInstanceState == null){
-            replaceFragment("fun_scan");
-        }
     }
 
-    public void replaceFragment(String index) {
+    private void setShotOperation() {
+        btnShot = findViewById(R.id.btn_shot);
+        btnShot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"shot "+ currentFragmentTag,Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void setCancelOperation(){
+        btnCancel = findViewById(R.id.iv_cancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+            }
+        });
+    }
+
+    public void replaceFragment(String tag) {
         FragmentManager mFragmentManager = getSupportFragmentManager();
         FragmentTransaction mTransaction = mFragmentManager.beginTransaction();
         Fragment currentFragment = null;
-        switch (index) {
+        switch (tag) {
             case Constants.FRAGMENT_DOCUMENT_TAG:
                 if (mDocumentFragment == null) {
                     mDocumentFragment = new FunDocumentFragment();
@@ -118,16 +143,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
         mTransaction.replace(R.id.frame_layout, currentFragment).addToBackStack(null).commitAllowingStateLoss();
-    }
-
-    private void setCancelOperation(){
-        btnCancel = findViewById(R.id.iv_cancel);
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-            }
-        });
     }
 
     /**

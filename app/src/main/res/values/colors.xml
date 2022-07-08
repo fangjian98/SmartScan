@@ -12,6 +12,7 @@
 
     <color name="textColorWhite">#FFFFFF</color>
     <color name="textColorGray">#A2ACB9</color>
+    <color name="textColorYellow">#F8CA30</color>
 
     <color name="generate_code_text_bg">#F5F6F8</color>
 
@@ -22,5 +23,4 @@
 
     <color name="ic_menu_enable_color">@color/textColorPrimary</color>
     <color name="ic_menu_disable_color">@*freeme:color/menu_text_color_disable</color>
-    <color name="textColorYellow">#F8CA30</color>
 </resources>
